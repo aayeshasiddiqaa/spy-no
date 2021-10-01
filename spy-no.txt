@@ -1,0 +1,32 @@
+public class SpyNumber {
+
+   // method to check the Spy number
+   private static boolean isSpy(int number) {
+
+      // declare variables
+      int lastDigit = 0;
+      int sum = 0;
+      int product = 1;
+
+      // iterate all digits of number
+      while(number != 0) {
+
+         // find last digit
+         lastDigit = number % 10;
+
+         // add last digit to sum
+         sum = sum + lastDigit;
+
+         // multiply last digit with product
+         product = product * lastDigit;
+
+         // remove last digit
+         number = number / 10;
+      }
+
+      // compare sum and product
+      if(sum == product)
+         return true;
+
+      return false;
+   }
